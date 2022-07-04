@@ -1,0 +1,62 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] data.openstack_networking_network_v2.public (expand)" [label = "data.openstack_networking_network_v2.public", shape = "box"]
+		"[root] local_sensitive_file.address (expand)" [label = "local_sensitive_file.address", shape = "box"]
+		"[root] local_sensitive_file.private_key (expand)" [label = "local_sensitive_file.private_key", shape = "box"]
+		"[root] openstack_compute_floatingip_associate_v2.timon (expand)" [label = "openstack_compute_floatingip_associate_v2.timon", shape = "box"]
+		"[root] openstack_compute_instance_v2.timon (expand)" [label = "openstack_compute_instance_v2.timon", shape = "box"]
+		"[root] openstack_compute_keypair_v2.timon (expand)" [label = "openstack_compute_keypair_v2.timon", shape = "box"]
+		"[root] openstack_compute_secgroup_v2.timon (expand)" [label = "openstack_compute_secgroup_v2.timon", shape = "box"]
+		"[root] openstack_networking_floatingip_v2.timon (expand)" [label = "openstack_networking_floatingip_v2.timon", shape = "box"]
+		"[root] openstack_networking_network_v2.timon (expand)" [label = "openstack_networking_network_v2.timon", shape = "box"]
+		"[root] openstack_networking_router_interface_v2.router_interface (expand)" [label = "openstack_networking_router_interface_v2.router_interface", shape = "box"]
+		"[root] openstack_networking_router_v2.router (expand)" [label = "openstack_networking_router_v2.router", shape = "box"]
+		"[root] openstack_networking_subnet_v2.timon (expand)" [label = "openstack_networking_subnet_v2.timon", shape = "box"]
+		"[root] output.address" [label = "output.address", shape = "note"]
+		"[root] output.private_key" [label = "output.private_key", shape = "note"]
+		"[root] provider[\"registry.terraform.io/hashicorp/local\"]" [label = "provider[\"registry.terraform.io/hashicorp/local\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]" [label = "provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]", shape = "diamond"]
+		"[root] var.flavor" [label = "var.flavor", shape = "note"]
+		"[root] var.image" [label = "var.image", shape = "note"]
+		"[root] var.prefix" [label = "var.prefix", shape = "note"]
+		"[root] var.provider_cloud" [label = "var.provider_cloud", shape = "note"]
+		"[root] var.public" [label = "var.public", shape = "note"]
+		"[root] data.openstack_networking_network_v2.public (expand)" -> "[root] provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]"
+		"[root] data.openstack_networking_network_v2.public (expand)" -> "[root] var.public"
+		"[root] local_sensitive_file.address (expand)" -> "[root] openstack_networking_floatingip_v2.timon (expand)"
+		"[root] local_sensitive_file.address (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"]"
+		"[root] local_sensitive_file.private_key (expand)" -> "[root] openstack_compute_keypair_v2.timon (expand)"
+		"[root] local_sensitive_file.private_key (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"]"
+		"[root] openstack_compute_floatingip_associate_v2.timon (expand)" -> "[root] openstack_compute_instance_v2.timon (expand)"
+		"[root] openstack_compute_floatingip_associate_v2.timon (expand)" -> "[root] openstack_networking_floatingip_v2.timon (expand)"
+		"[root] openstack_compute_instance_v2.timon (expand)" -> "[root] openstack_compute_keypair_v2.timon (expand)"
+		"[root] openstack_compute_instance_v2.timon (expand)" -> "[root] openstack_compute_secgroup_v2.timon (expand)"
+		"[root] openstack_compute_instance_v2.timon (expand)" -> "[root] openstack_networking_subnet_v2.timon (expand)"
+		"[root] openstack_compute_instance_v2.timon (expand)" -> "[root] var.flavor"
+		"[root] openstack_compute_instance_v2.timon (expand)" -> "[root] var.image"
+		"[root] openstack_compute_keypair_v2.timon (expand)" -> "[root] provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]"
+		"[root] openstack_compute_keypair_v2.timon (expand)" -> "[root] var.prefix"
+		"[root] openstack_compute_secgroup_v2.timon (expand)" -> "[root] provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]"
+		"[root] openstack_compute_secgroup_v2.timon (expand)" -> "[root] var.prefix"
+		"[root] openstack_networking_floatingip_v2.timon (expand)" -> "[root] openstack_networking_router_interface_v2.router_interface (expand)"
+		"[root] openstack_networking_network_v2.timon (expand)" -> "[root] provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]"
+		"[root] openstack_networking_network_v2.timon (expand)" -> "[root] var.prefix"
+		"[root] openstack_networking_router_interface_v2.router_interface (expand)" -> "[root] openstack_networking_router_v2.router (expand)"
+		"[root] openstack_networking_router_interface_v2.router_interface (expand)" -> "[root] openstack_networking_subnet_v2.timon (expand)"
+		"[root] openstack_networking_router_v2.router (expand)" -> "[root] data.openstack_networking_network_v2.public (expand)"
+		"[root] openstack_networking_router_v2.router (expand)" -> "[root] var.prefix"
+		"[root] openstack_networking_subnet_v2.timon (expand)" -> "[root] openstack_networking_network_v2.timon (expand)"
+		"[root] output.address" -> "[root] openstack_networking_floatingip_v2.timon (expand)"
+		"[root] output.private_key" -> "[root] openstack_compute_keypair_v2.timon (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)" -> "[root] local_sensitive_file.address (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)" -> "[root] local_sensitive_file.private_key (expand)"
+		"[root] provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"] (close)" -> "[root] openstack_compute_floatingip_associate_v2.timon (expand)"
+		"[root] provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"]" -> "[root] var.provider_cloud"
+		"[root] root" -> "[root] output.address"
+		"[root] root" -> "[root] output.private_key"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/terraform-provider-openstack/openstack\"] (close)"
+	}
+}
