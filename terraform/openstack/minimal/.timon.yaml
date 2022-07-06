@@ -6,75 +6,75 @@ blueprint:
   description: |
     Start a single instance on an OpenStack environment
 
-environment:
-  name: terraform/base
-  version: 1.2.4
+  environment:
+    name: terraform/base
+    version: 1.2.4
 
-inputs:
-  - name: clouds.yaml
-    destination:
-      path: /input/clouds.yaml
-      type: file
-    type: yaml
-    required: true
-    description: |
-      clouds.yaml is a configuration file that contains everything needed to connect
-      to one or more clouds. It may contain private information and is generally
-      considered private to a user.
-    visibility: private
+  inputs:
+    - name: clouds.yaml
+      destination:
+	path: /input/clouds.yaml
+	type: file
+      type: yaml
+      required: true
+      description: |
+	clouds.yaml is a configuration file that contains everything needed to connect
+	to one or more clouds. It may contain private information and is generally
+	considered private to a user.
+      visibility: private
 
-  - name: cloud name
-    destination:
-      path: TF_provider_cloud
-      type: environment
-    type: string
-    default: openstack
-    required: false
-    description: |
-      Entry from the clouds.yaml to be used.
+    - name: cloud name
+      destination:
+	path: TF_provider_cloud
+	type: environment
+      type: string
+      default: openstack
+      required: false
+      description: |
+	Entry from the clouds.yaml to be used.
 
-  - name: prefix
-    destination:
-      path: TF_prefix
-      type: environment
-    type: string
-    default: timon
-    required: false
-    description: |
-      Prefix for the create resources to be used.
+    - name: prefix
+      destination:
+	path: TF_prefix
+	type: environment
+      type: string
+      default: timon
+      required: false
+      description: |
+	Prefix for the create resources to be used.
 
-  - name: flavor 
-    destination:
-      path: TF_flavor
-      type: environment
-    type: string
-    default: "SCS-1V:4:10"
-    required: false
-    description: |
-      Machine flavor
+    - name: flavor
+      destination:
+	path: TF_flavor
+	type: environment
+      type: string
+      default: "SCS-1V:4:10"
+      required: false
+      description: |
+	Machine flavor
 
-  - name: image
-    destination:
-      path: TF_image
-      type: environment
-    type: string
-    default: Ubuntu 20.04
-    required: false
-    description: |
-      Machine image
+    - name: image
+      destination:
+	path: TF_image
+	type: environment
+      type: string
+      default: Ubuntu 20.04
+      required: false
+      description: |
+	Machine image
 
-outputs:
-  - name: private_key
-    source:
-      path: /output/private_key
-      type: ssh
-    description: |
-      Private SSH key to access the instance
-    visibility: private
+  outputs:
+    - name: private_key
+      source:
+	path: /output/private_key
+	type: ssh
+      description: |
+	Private SSH key to access the instance
+      visibility: private
 
-  - name: address
-    source:
-      path: /output/address
-      type: ipv4address
-    description: |
-      IP address to access the instance
+    - name: address
+      source:
+	path: /output/address
+	type: ipv4address
+      description: |
+	IP address to access the instance
