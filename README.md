@@ -1,7 +1,7 @@
 # blueprints
 
 ```
-timonadm blueprint import https://github.com/timontech/blueprints openstack/minimal
+timonctl blueprint import https://github.com/timontech/blueprints terraform/openstack/minimal
 ```
 
 ## Terraform
