@@ -1,12 +1,14 @@
 ---
 blueprint:
   author: Christian Berendt
+  index: timontech/blueprints
   name: openstack/minimal
   version: 1.0.0
   description: |
     Start a single instance on an OpenStack environment
 
   environment:
+    index: timontech/environments
     name: terraform/base
     version: 1.2.4
 
