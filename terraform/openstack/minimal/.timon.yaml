@@ -2,7 +2,7 @@
 blueprint:
   author: Christian Berendt
   index: timontech/blueprints
-  name: openstack/minimal
+  name: terraform/openstack/minimal
   versions:
     - 1.0.0
   description: |
