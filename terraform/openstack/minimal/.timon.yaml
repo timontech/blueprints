@@ -27,7 +27,7 @@ blueprint:
 
     - name: cloud name
       destination:
-        path: TF_provider_cloud
+        path: TF_VAR_provider_cloud
         type: environment
       default: openstack
       required: false
@@ -36,7 +36,7 @@ blueprint:
 
     - name: prefix
       destination:
-        path: TF_prefix
+        path: TF_VAR_prefix
         type: environment
       default: timon
       required: false
@@ -45,7 +45,7 @@ blueprint:
 
     - name: flavor
       destination:
-        path: TF_flavor
+        path: TF_VAR_flavor
         type: environment
       default: "SCS-1V:4:10"
       required: false
@@ -54,7 +54,7 @@ blueprint:
 
     - name: image
       destination:
-        path: TF_image
+        path: TF_VAR_image
         type: environment
       default: Ubuntu 20.04
       required: false
