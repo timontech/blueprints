@@ -16,7 +16,7 @@ blueprint:
   inputs:
     - name: clouds.yaml
       destination:
-        path: /input/clouds.yaml
+        path: clouds.yaml
         type: file
       required: true
       description: |
