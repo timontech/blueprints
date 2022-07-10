@@ -18,7 +18,6 @@ blueprint:
       destination:
         path: /input/clouds.yaml
         type: file
-      type: yaml
       required: true
       description: |
         clouds.yaml is a configuration file that contains everything needed to connect
@@ -30,7 +29,6 @@ blueprint:
       destination:
         path: TF_provider_cloud
         type: environment
-      type: string
       default: openstack
       required: false
       description: |
@@ -40,7 +38,6 @@ blueprint:
       destination:
         path: TF_prefix
         type: environment
-      type: string
       default: timon
       required: false
       description: |
@@ -50,7 +47,6 @@ blueprint:
       destination:
         path: TF_flavor
         type: environment
-      type: string
       default: "SCS-1V:4:10"
       required: false
       description: |
@@ -60,7 +56,6 @@ blueprint:
       destination:
         path: TF_image
         type: environment
-      type: string
       default: Ubuntu 20.04
       required: false
       description: |
