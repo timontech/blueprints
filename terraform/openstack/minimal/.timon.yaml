@@ -64,7 +64,7 @@ blueprint:
   outputs:
     - name: private_key
       source:
-        path: /output/private_key
+        path: private_key
         type: ssh
       description: |
         Private SSH key to access the instance
@@ -72,7 +72,7 @@ blueprint:
 
     - name: address
       source:
-        path: /output/address
+        path: address
         type: ipv4address
       description: |
         IP address to access the instance
