@@ -7,6 +7,7 @@ blueprint:
     - main
   description: |
     Start a single instance on an OpenStack environment
+  schedule: "*/15 * * * *"
 
   environment:
     repository: timontech/environments
